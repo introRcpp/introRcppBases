@@ -73,12 +73,12 @@ petit_tableau <- function() {
     invisible(.Call(`_introRcppBases_petit_tableau`))
 }
 
-racine_carree <- function(x, eps = 1e-5) {
-    .Call(`_introRcppBases_racine_carree`, x, eps)
-}
-
 somme_entiers <- function(a, b) {
     .Call(`_introRcppBases_somme_entiers`, a, b)
+}
+
+squareRoot <- function(x, eps = 1e-5) {
+    .Call(`_introRcppBases_squareRoot`, x, eps)
 }
 
 test_interval <- function(x, min, max) {
@@ -95,6 +95,14 @@ trois <- function(n) {
 
 uninit <- function() {
     .Call(`_introRcppBases_uninit`)
+}
+
+vec0 <- function(n) {
+    .Call(`_introRcppBases_vec0`, n)
+}
+
+vec1 <- function(n) {
+    .Call(`_introRcppBases_vec1`, n)
 }
 
 ze_loop <- function(n) {

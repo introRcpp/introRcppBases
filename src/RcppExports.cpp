@@ -189,18 +189,6 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
-// racine_carree
-double racine_carree(double x, double eps);
-RcppExport SEXP _introRcppBases_racine_carree(SEXP xSEXP, SEXP epsSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
-    rcpp_result_gen = Rcpp::wrap(racine_carree(x, eps));
-    return rcpp_result_gen;
-END_RCPP
-}
 // somme_entiers
 int somme_entiers(int a, int b);
 RcppExport SEXP _introRcppBases_somme_entiers(SEXP aSEXP, SEXP bSEXP) {
@@ -210,6 +198,18 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type a(aSEXP);
     Rcpp::traits::input_parameter< int >::type b(bSEXP);
     rcpp_result_gen = Rcpp::wrap(somme_entiers(a, b));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareRoot
+double squareRoot(double x, double eps);
+RcppExport SEXP _introRcppBases_squareRoot(SEXP xSEXP, SEXP epsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareRoot(x, eps));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -257,6 +257,28 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// vec0
+Rcpp::NumericVector vec0(int n);
+RcppExport SEXP _introRcppBases_vec0(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(vec0(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// vec1
+Rcpp::IntegerVector vec1(int n);
+RcppExport SEXP _introRcppBases_vec1(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(vec1(n));
+    return rcpp_result_gen;
+END_RCPP
+}
 // ze_loop
 void ze_loop(int n);
 RcppExport SEXP _introRcppBases_ze_loop(SEXP nSEXP) {
@@ -298,12 +320,14 @@ static const R_CallMethodDef CallEntries[] = {
     {"_introRcppBases_operateurs_exotiques", (DL_FUNC) &_introRcppBases_operateurs_exotiques, 1},
     {"_introRcppBases_overflow", (DL_FUNC) &_introRcppBases_overflow, 0},
     {"_introRcppBases_petit_tableau", (DL_FUNC) &_introRcppBases_petit_tableau, 0},
-    {"_introRcppBases_racine_carree", (DL_FUNC) &_introRcppBases_racine_carree, 2},
     {"_introRcppBases_somme_entiers", (DL_FUNC) &_introRcppBases_somme_entiers, 2},
+    {"_introRcppBases_squareRoot", (DL_FUNC) &_introRcppBases_squareRoot, 2},
     {"_introRcppBases_test_interval", (DL_FUNC) &_introRcppBases_test_interval, 3},
     {"_introRcppBases_test_positif", (DL_FUNC) &_introRcppBases_test_positif, 1},
     {"_introRcppBases_trois", (DL_FUNC) &_introRcppBases_trois, 1},
     {"_introRcppBases_uninit", (DL_FUNC) &_introRcppBases_uninit, 0},
+    {"_introRcppBases_vec0", (DL_FUNC) &_introRcppBases_vec0, 1},
+    {"_introRcppBases_vec1", (DL_FUNC) &_introRcppBases_vec1, 1},
     {"_introRcppBases_ze_loop", (DL_FUNC) &_introRcppBases_ze_loop, 1},
     {"_introRcppBases_zz", (DL_FUNC) &_introRcppBases_zz, 2},
     {NULL, NULL, 0}
